@@ -170,3 +170,6 @@ Git show will show contents of commits, last one you made, can also take “addr
 Git log shows title of commits, not the contents, will show who made the commit
 
 git commit -a, will stage all files that have been changed, does both git add and git commit, will only do git add or git commit on the things you are tracking
+
+adding another line because recap homework told me to do so.
+Adding another with more capitalization and saying something about how I think git is super cool. 
