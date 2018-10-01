@@ -173,3 +173,20 @@ git commit -a, will stage all files that have been changed, does both git add an
 
 adding another line because recap homework told me to do so.
 Adding another with more capitalization and saying something about how I think git is super cool. 
+
+9/26/18 Wednesday 
+deleting .git directory in a repository will remove the repository from the directory you are in.
+need to `rm -f` to remove `.git` respository or you will be asked about deleting every single file
+
+`git pull ` will pull new updates from githib.
+`git clone` to create a new repository
+`git merge` merges changes made to a single file being accessed by two or more people
+`git remote -v` will say if you are currently connected to a remote repository
+`git branch` will tell you what branch you are on
+
+before pulling, always commit changes. Try to pull and new changes will erase wat you just tried to do, git won't let you do this.
+
+`git merge` merge commit when two people are working on the same file at the same time
+will need to manually resolve the conflicts. VS will show you the differences in the file and will ask whether you want to keep what you changed, what the other person changed, and overall how to resolve the conflict 
+
+10/1/18 adding more notes for git homework due today before class. 
