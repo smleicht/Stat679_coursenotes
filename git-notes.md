@@ -190,3 +190,164 @@ before pulling, always commit changes. Try to pull and new changes will erase wa
 will need to manually resolve the conflicts. VS will show you the differences in the file and will ask whether you want to keep what you changed, what the other person changed, and overall how to resolve the conflict 
 
 10/1/18 adding more notes for git homework due today before class. 
+
+make shorter comments in scripts
+comment that helps reader understand what is being done if it is not obvious
+make sure to write out all assumptions that are being made as well
+make a comment that explains what each variable means, write for humans what each variable means
+
+cut is really cool
+cut -f 1 will cut the first column
+"f" is a field, can ask for multiple fields at once
+-d will change the delimiter between column fields instead of tab, -d ' ' for a space
+-d, -d , -d ',' will instert commas as a csv format, tab is deafult delimited
+
+
+sort based on keys -k which are columns
+n will sort things numerically but not as strings
+-c just checks to see file is already sorted
+change the delimited -t, tab is default delimiter(old school)
+
+trying to sort columns that do not start with numbers, want to treat it like a string
+r option will list things in decending order, if place with a key will only affect that one key, when -r will reverse 
+
+`grep “ENSMUSG00000033793” Mus_musculus.GRCm38.75_chr1.gtf | cut -f 3 | sort | uniq`
+in class exercise to search for genomic features associated with a gene 
+
+column will make things look nice and -t will tab delimit the columns
+
+sed substitute/this/bythat
+what you want to look at and what you want to change it to.... always send it to a new file never send it to the same file
+` sed 's/chrom/chr/'` will replace chrom by chr
+
+capture things with parathenses, capture then and replace them with 
+
+10/3/18
+exercise 3 is due next wednesday at 8pm, then going to do peer review on each other's code due 10/15 (5 days later) 2 reviewers per code
+do diff expected output vs output of what the person's code outputs out 
+
+everyhting in parathenses is a subshell in a program
+
+column -t will make the columns of the output nicer looking
+
+`#!/bin/bash` says to use bash when executing this script, will run it in bash without saying bash
+
+set settings in beginning of script will make script more safe
+error  occurs, stop command
+
+
+
+./ will say in this directory, but will not allow to just run scripts 
+
+tell if directory or file, rwe (read, write, execute) - means you dont have permission
+first grouping- owner
+people in a group what they can do
+everyone who could ever access file
+
+chmod-chnage modify u (user) +x (to execute)
+add permission for yourself to execute a file
+
+bin needs binary, executable scripts
+
+export PATH="$PATH:~/bin", adding to the path variable, will have things that were in there beforehand
+
+(()) tells the shell that some arithmetic is going to be done
+
+if this is true, do this
+can have else if what is not true
+then fi to end the if statement
+
+-lt (less than)
+
+-o is or within an if statement, if find that first statement in if statement then stops looking, will only look at a will not look at b
+
+10/8/18 Git branches
+bare respository only has .git folder, no files in this respository. just .git
+
+branches are convienent to develop something you dont want anyone to see 
+git branch "branch name" creates a new branch 
+git branch will list the branches you have and a * will show which branch you are on
+
+-d option will delete a branch 
+
+ will list history of a repository in one line, and show graph of branches
+
+branches do not contain information, commits do
+
+git branch -vv verbose will show chnages to branches
+
+git fetch --all will get all things that are new, not just what is changed on the branch you are currently on
+
+git checkout to a previous commit will show you what information was that commit, when git checkout from current commit then you will get to that commit
+
+checkout is liek cd in git
+
+git checkout master
+git merge readme-changes
+
+will merge readme-changes branch to the master branch
+
+branch -a will list all branches
+
+when merging, want to be on the branch that will have the change
+
+git fetch --prune will get deletions as well as additions
+
+git commit --amend will chnage message involved in the commit
+ 
+shasum
+0 or 1 is a bit
+1 byte = 8 bits
+1 nibble = 4 bits
+
+0000 = 0
+0001 = 1
+0010 = 2
+...
+1111 = 15
+
+
+nibble 16 base
+0 1 2 .... 8 9 a(10) b(11) c(12) d(13) e(14) f(15)
+8 = 1000
+each character is 4 bits, a nibble
+
+used when downloading software use shasum to make sure softward hasnt been corrupted by viruses
+
+10/10/18 wednesday
+awk is a text editor, sed is a stream editor (awk is considered to be a stream editor as well)
+more powerful than sed
+takes input file or standard input
+tell awk an pattern and {action} within the brackets
+can have awk statements that have patterns, some that only have action, and some that have both
+!= not &&= and ||= or
+if no action, print the entire line. $1, $2 are specific variables 
+field is a column within a line, record is a line number
+== is to test
+awk is kind of a programming langauge on its own
+awk works on tabular data, default delimiter is tab, -F"," will change the field/delimiter to a , for a csv file
+
+awk '$3 - $2 > 18' example.bed will print lines that follow this pattern only, third column minus the second column is equal to 18
+
+chr2|chr3 means matches chr2 or chr3, matches one or the other
+
+{ s = 0 }; { s += ($3-$2) defines a variable and then adds the difference between columns 3 and 2 to the value s
+NR is total number of records that you have read so far
+
+[] is an array
+
+feature[$3]+= 1
+feature[gene]+= 1, associative array
+associate a key that is not necessarily a number to a value and += will increment by 1
+feature
+gene --> 1
+transcript --> 1
+exon --> 1
+gene --> 2 ( when comes up again in a file)
+
+transcript, gene, exons are keys in awk
+
+# will have you strip things from the beginning of the name of something
+wget- will get data from the internet
+
+curl will redirect things as standard output, would 
