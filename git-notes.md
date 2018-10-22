@@ -351,3 +351,84 @@ transcript, gene, exons are keys in awk
 wget- will get data from the internet
 
 curl will redirect things as standard output, would 
+
+10/22/18 Monday intro to Python
+
+integer vs floating value
+integer is compatible with bits in coding language (64 bit notation)
+
+floating value = 1.234567 or 12.34567
+use scienitifc notation in this case 
+1.234 * 10^102 0r 1.234 * 10^-102 for writing really large or really small numbers
+both of these numbers are 11 bits (one bit for the sign of the exponenet)
+
+Integers are fundamentally different from floating values
+
+booleans= 0 is false, 1 is true
+bool(1.3) is True
+
+float(True)= 1      bool(None)= False
+
+good for if statements for returning true or false statements 
+
+1.0/3.0 == 1.0 - 2.0/3.0  is asking 1/3 equal to 1-2/3
+but python says False, because floating values will cause numerical calculation errors
+
+"%s %s hello %s" will help you write strings of numbers and not the bits of the numbers
+
+% is a string, s is a space
+
+%d will print numbers are integers even if they are floating values 
+
+%.2f writing a float with two values after the decimal place
+
+%.1e will write a numver is scientific notation 
+
+[10,20] is a list  (10,20) is a tuple
+
+we can change lists but not tuples
+
+mutables vs immutables
+mutable means you have the ability to change something 
+strings are immutable, so are tuples, floats, and booleans
+
+lists of lists is not the same thing as an array
+
+have lists within lists that depend on each other, if change a value within the list, one of the values on the "outside" of the list will be chnaged if an interior value is changed
+lists are mutable
+
+deep copy vs simple copy
+when making a copy of lists if lists, even if make a copy and then chnage a value in the list it will chnage what is in the list even though a copy has been made
+
+ex. a = [[10,11].[20,21]]
+b = copy.copy(a)
+b[0][0] = 50
+this chnages both a and b
+
+but if 
+a = [[10,11].[20,21]]
+b = copy.deepcopy(a)
+b[0][0] = 8
+will chnage without affecting a
+
+functions is similar to writing for loops
+def add1_scalar(x):
+    """adds 1 to scalar input"""
+    x += 1
+    print("after add1_scalar:", x)
+
+like for loops, defining functions end when indentation goes away 
+
+
+within a session you have defined variables and names, when writing a function you can copy variables into functions and original list is unchanged when function is executed
+
+but can write a function to make a value within a session to make it mutable, function can chnage it 
+
+split will operate on strings give it some sort of delimiter, split with a space or a comma or whatever
+
+replace something with something else, 
+
+\n for new line, \t for a tab
+
+strip will get rid of extra spaces
+rstrip will strip what is on rhe righthand side
