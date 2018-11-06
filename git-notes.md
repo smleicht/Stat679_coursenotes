@@ -432,3 +432,148 @@ replace something with something else,
 
 strip will get rid of extra spaces
 rstrip will strip what is on rhe righthand side
+
+10/24/18  Wednesday
+
+Tuples like a list but are immutable
+handy if want to exchange two things
+
+python can add paratheses "under the hood" doesn't always need to add paranthesis
+
+.append() will add one more to the end of a list
+
+.del[] will delete a value in that specific position in the list (0 is the first position in a list)
+.pop will delete the last value of a list, can store that value in a different value 
+
+* will not multiple values by a number, will lists items in a list twice
+
+sorted will only work on lists of the same type (numbers or strings)
+
+dir() will tell you what kinds of functions and their syntax on the lists
+
+r'' is used to write raw, regular expression
+
+capture things with paranthesis in regular expressions and replace with \ slashes
+
+like syntax for capturing and replacing
+
+scope of variables: in main session define a variable 
+
+create a function with  a variable, the variable can have a different value within a function
+a= hello world in session
+but in the function foo() a= 18
+
+for loops, defining a variable will stayed defined within the session
+
+mo is match object
+
+10/29/18 Monday
+
+need to program defensively, write it so that you assume that the user may not use it correctly
+make sure to document code very well.
+
+""" is a duckstring, considered beginning of the line even if it has been indented
+each time do copy/paste write a function instead, you will be saving your future self
+
+use informative names in your functions
+
+use spaces over tabs when writing for loops in python, tabs will look differently in different types of text-edit
+
+want to be able to import a script as a module and use the functions within the script
+"import binomial"
+
+#!/usr/bin/env python this at the top of a file will allow you to execute the file, without having to call it with python
+
+__name__ is a predefined variable in python
+'__main__' will have you execute the main file and quit python
+
+10/31/18 Wednesday
+
+can capture a script name and arguments in a list with argparse library
+
+" hi = "Howdy" if args.long else "Hi" "
+syntax us if true write howdy, if false write hi 
+short way of writing shorter If, else statements, good for when statment is very simple 
+
+__name__ is predefined in python will be __main__ if written in your session
+if import file as module, then will have something different than __main__
+
+if args.n<0:
+    raise Exception("argument -n must be 0 or positive")
+
+    raise is a way of raising an error, exception is a very generic way of throwing an error.
+
+11/5/18 Monday
+numpy is main module for working with data within python
+
+getting a handle on to file is a way hold on to the file without opening the file
+
+try is used to run something in case of disk quota is full
+want to close the file handle at the end, not to create any problems
+
+can iterate over file handles, over ranges, lists
+
+line = fh.readline() reads one line at a time and saves it in "line"
+every time call fh it will now read a new line
+
+while loops, similar a for loop, not specify what you are looping over (not sure how mnay rounds) whether or not the value is true you keep doing the loop until the value is false
+
+danger of while loops is that they can go on forever without stopping
+
+dna += appends .strip() will strip any blank space, including a new line character, striping that string from any new line characters
+
+"r" will open something as read only
+
+continue command tells the function to continue back to the beginning of the loop, on to the next iteration
+simplifies codes a little to keep from nested loops occurring
+
+sys.stdout is a file handle that will print standard output on to the screen, must be imported with sys
+
+move around directories/ ls things in python requires os import 
+
+os.system("touch readme.md") will pass this string on to the shell and the shell will run this command, python cannot talk to the shell normally
+
+break will have you get out of a loop, for if loop wont need an else, if somehting is true then break, if it is not true, it will continue, break will only break out of one level
+
+if statment is not considered a loop
+
+range is a very small entity, small object 
+
+continue, will not execute if value is false
+
+pass to do nothing which is useful for new not ready to use code, a function  must have at least 1 line
+
+dictionaries: similar to list, but are not ordered 
+lists are indexed by integers, from 1 to some number
+
+dictionaries are indexed by whatever you want them to be indexed by 
+use {} for dictionaries  use h to define a dictionary
+
+l makes an empty list 
+h will make an empty dictionary
+
+del can delete a piece of a dictionary
+pop can delete a part of a dictionary, have to specify which piece you want to pop
+h.pop(whateveryouwant deleted)
+
+called a dictionary because you have a name and something to define the name 
+
+kmers
+ # of possible 20-mers
+ 4 for A, C, G, T
+ 4*4*4*4.... = 4^20
+
+ dna = "TCAATAGGTGGTCGTTGTTT"
+k2mer = {} # variable names cannot start with a digit
+bases = ["A","C","G","T"]
+for nuc1 in bases:
+  for nuc2 in bases:
+    mycount = dna.count(nuc1+nuc2)
+    if mycount:
+      k2mer[nuc1+nuc2] = mycount
+for this code we are counting things that may not be present in the string we are looking through
+this is not the best way of doing this
+ .get() is a safe way of getting a value
+ .get( ,0) will have the deafult if that value is not found be 0
+
+ sets are similar to dictionaries but have keys 
